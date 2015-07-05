@@ -60,4 +60,7 @@ def getCountsAndAverages(IDandRatingsTuple):
     tuple_total = reduce(add, IDandRatingsTuple[1])
     return ( IDandRatingsTuple[0], (tuple_size, tuple_total / float( tuple_size )) )
 
+movieIDsWithRatingsRDD = ratingsRDD.map(lambda (uid,mid,rating): (mid,rating)).groupByKey()
+
+
 ```
