@@ -53,4 +53,11 @@ u'1.000 Toy Story (1995)'
 >>> print twoRDD.sortBy(sortFunction, True).collect()
 [(1, u'alpha'), (1, u'delta'), (1, u'epsilon'), (2, u'alpha'), (2, u'beta'), (3, u'alpha')]
 
+
+def getCountsAndAverages(IDandRatingsTuple):
+    from operator import add
+    tuple_size = len(IDandRatingsTuple[1])
+    tuple_total = reduce(add, IDandRatingsTuple[1])
+    return ( IDandRatingsTuple[0], (tuple_size, tuple_total / float( tuple_size )) )
+
 ```
