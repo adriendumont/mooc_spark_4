@@ -48,4 +48,9 @@ def sortFunction(tuple):
 >>> sortFunction( (1, u'Toy Story (1995)') )
 u'1.000 Toy Story (1995)'
 
+>>> print oneRDD.sortBy(sortFunction, True).collect()
+[(1, u'alpha'), (1, u'delta'), (1, u'epsilon'), (2, u'alpha'), (2, u'beta'), (3, u'alpha')]
+>>> print twoRDD.sortBy(sortFunction, True).collect()
+[(1, u'alpha'), (1, u'delta'), (1, u'epsilon'), (2, u'alpha'), (2, u'beta'), (3, u'alpha')]
+
 ```
