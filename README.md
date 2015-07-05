@@ -44,4 +44,8 @@ def sortFunction(tuple):
     value = tuple[1]
     return (key + ' ' + value)
 
+
+>>> sortFunction( (1, u'Toy Story (1995)') )
+u'1.000 Toy Story (1995)'
+
 ```
