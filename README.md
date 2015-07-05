@@ -62,5 +62,7 @@ def getCountsAndAverages(IDandRatingsTuple):
 
 movieIDsWithRatingsRDD = ratingsRDD.map(lambda (uid,mid,rating): (mid,rating)).groupByKey()
 
+>>> movieIDsWithRatingsRDD.map(getCountsAndAverages).take(1)
+[(2048, (131, 3.49618320610687))]
 
 ```
