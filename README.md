@@ -1,4 +1,23 @@
 ```
+/home/student/mooc/movielens-bench/ml-1m/ratings.dat
+/home/student/mooc/movielens-bench/ml-1m/README
+/home/student/mooc/movielens-bench/ml-1m/users.dat
+/home/student/mooc/movielens-bench/ml-1m/ratings.dat.gz
+/home/student/mooc/movielens-bench/ml-1m/movies.dat
+
+ratingsFilename = '/home/student/mooc/movielens-bench/ml-1m/ratings.dat'
+moviesFilename = '/home/student/mooc/movielens-bench/ml-1m/movies.dat'
+
+def get_ratings_tuple(entry):
+    items = entry.split(';')
+    return int(items[0]), int(items[1]), float(items[2])
+
+def get_movie_tuple(entry):
+    items = entry.split(';')
+    return int(items[0]), items[1]
+
+
+
 >>> def get_ratings_tuple(entry):
 ...     items = entry.split(';')
 ...     return int(items[0]), int(items[1]), float(items[2])
@@ -19,5 +38,10 @@
 >>> moviesRDD.take(2)
 [(1, u'Toy Story (1995)'), (2, u'Jumanji (1995)')]
 >>> 
+
+def sortFunction(tuple):
+    key = unicode('%.3f' % tuple[0])
+    value = tuple[1]
+    return (key + ' ' + value)
 
 ```
