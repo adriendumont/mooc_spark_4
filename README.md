@@ -65,4 +65,9 @@ movieIDsWithRatingsRDD = ratingsRDD.map(lambda (uid,mid,rating): (mid,rating)).g
 >>> movieIDsWithRatingsRDD.map(getCountsAndAverages).take(1)
 [(2048, (131, 3.49618320610687))]
 
+>>> moviesRDD.lookup(2048)[0]
+u'Great Mouse Detective, The (1986)'
+>>> moviesRDD.take(3)
+[(1, u'Toy Story (1995)'), (2, u'Jumanji (1995)'), (3, u'Grumpier Old Men (1995)')]
+
 ```
