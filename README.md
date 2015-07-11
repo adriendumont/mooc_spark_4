@@ -72,5 +72,13 @@ u'Great Mouse Detective, The (1986)'
 
 ```
 [http://ge.tt/5Fa24tJ2/v/0](http://ge.tt/5Fa24tJ2/v/0)
+```
+def squaredError(label, prediction):
+    aux = label - prediction
+    return aux * aux
+def calcRMSE(labelsAndPreds):
+    sumOfSquares = labelsAndPreds.reduce(lambda tpl1, tpl2: squaredError(tpl1) + squaredError(tpl2))
+    return np.sqrt(sumOfSquares / labelsAndPreds.count())
+```
 
 
