@@ -80,5 +80,5 @@ def calcRMSE(labelsAndPreds):
     sumOfSquares = labelsAndPreds.reduce(lambda tpl1, tpl2: squaredError(tpl1) + squaredError(tpl2))
     return np.sqrt(sumOfSquares / labelsAndPreds.count())
 ```
-
+[ipynb](https://gist.github.com/dserban/8d78ecfcaa0b061d8c81)
 
