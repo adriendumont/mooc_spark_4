@@ -81,4 +81,5 @@ def calcRMSE(labelsAndPreds):
     return np.sqrt(sumOfSquares / labelsAndPreds.count())
 ```
 [ipynb](https://gist.github.com/dserban/8d78ecfcaa0b061d8c81)
+
 [lab4](https://gist.github.com/dserban/97e507ef8499f4532694)
